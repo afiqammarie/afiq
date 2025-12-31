@@ -1,0 +1,179 @@
+/* --- 1. UI STYLE GUIDE & VARIABLES --- */
+:root {
+    --dark-green: #002b1b; 
+    --light-green: #a8ffb2;  
+    --pastel-green: #d1ffda;  
+    --yellow: #ffcc00;       
+    --white: #ffffff;
+    --text-dark: #1a1a1a;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s ease-in-out;
+}
+
+/* --- 2. GLOBAL RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins';
+    line-height: 1.6;
+    background-color: var(--white);
+    color: var(--text-dark);
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- 3. NAVIGATION & HEADER --- */
+.main-header {
+    background-color: var(--dark-green);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img { height: 70px; }
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.main-nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    padding: 0 20px;
+}
+
+.main-nav ul li a.active, .main-nav ul li a:hover {
+    color: var(--yellow);
+}
+
+/* --- 4. ABOUT PAGE LAYOUT (TARGET & IMPACT) --- */
+.bg-dark-green {
+    background-color: var(--dark-green);
+    color: var(--white);
+}
+
+.split-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 100px 0;
+}
+
+.split-layout.reverse {
+    flex-direction: row-reverse; 
+}
+
+.text-content { 
+    flex: 1; 
+}
+
+.image-content { 
+    flex: 1; 
+}
+
+.text-content h1 { 
+    font-size: 5rem; 
+    font-weight: 800; 
+    margin-bottom: 10px; 
+}
+
+.text-content h2 { 
+    font-size: 4rem; 
+    color: var(--dark-green); 
+    font-weight: 800; 
+}
+
+.text-content h3 { 
+    font-size: 1.5rem; 
+    margin-bottom: 25px; 
+    font-weight: 600; 
+}
+
+.rounded-img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+/* --- Horizontal Impact Layout --- */
+.split-layout {
+    display: flex;             
+    align-items: center; 
+    justify-content: space-between;
+    gap: 60px;         
+    padding: 80px 0;
+}
+
+.image-content {
+    flex: 1;                   
+}
+
+.text-content {
+    flex: 1;             
+    text-align: left;  
+}
+
+.rounded-img {
+    width: 100%;
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+/* Responsive: Stacks on top of each other for smaller screens */
+@media (max-width: 768px) {
+    .split-layout {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+}
+
+/* --- 8. FOOTER & SCROLL UP --- */
+.main-footer {
+    padding: 60px 0 30px;
+    text-align: center;
+    position: relative;
+}
+
+.scroll-up {
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+    background: var(--yellow);
+    color: black;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    font-weight: bold;
+}
+.social-links img { height: 35px; margin: 0 15px; }
+.copyright { color: var(--dark-green); font-weight: 600; margin-top: 15px; }
+
+/* --- 9. RESPONSIVE DESIGN --- */
+@media (max-width: 768px) {
+    .split-layout, .split-layout.reverse { flex-direction: column; text-align: center; }
+    .tips-grid, .news-grid, .form-grid { grid-template-columns: 1fr; }
+    .partner-grid { flex-wrap: wrap; }
+    .scroll-up { left: 20px; width: 45px; height: 40px; }
+}

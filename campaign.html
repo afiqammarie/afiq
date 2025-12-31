@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campaigns | SDG 3 Good Health</title>
+    <link rel="stylesheet" href="campaign.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container nav-wrapper">
+            <div class="logo"><img src="logo.png" alt="SDG 3 Logo"></div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="homepage.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="campaign.html" class="active">Campaign</a></li>
+                    <li><a href="wellness.html">Wellness</a></li>
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section campaign-hero">
+            <div class="container text-left">
+                <h1>Campaign</h1>
+                <p>Our Current & Past Initiatives</p>
+            </div>
+        </section>
+
+        <section class="overlap-section">
+            <div class="container">
+                <div class="white-card">
+                    <div class="campaign-img">
+                        <img src="mental-health-campaign.jpg" alt="Current Campaign">
+                    </div>
+                    <div class="campaign-text">
+                        <h3>Current campaign</h3>
+                        <h4>The Mind Matters: Building Global Mental Health Resilience</h4>
+                        <p>This is our flagship effort to directly address SDG Target 3.4 by tackling the growing global mental health crisis.</p>
+                        <p class="space-above">This campaign is driven by a measurable goal: to train 5,000 community volunteers across four countries this year.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="past-campaigns section-padding">
+            <div class="container">
+                <div class="section-title">
+                    <h2 class="title-large">Past Campaign</h2>
+                    <p>Our success stories</p>
+                </div>
+
+                <div class="grid-3">
+                    <div class="story-card">
+                        <img src="maternal-health.jpg" alt="Maternal Health">
+                        <div class="story-content bg-pastel-green">
+                            <h5>The 'Healthy Start' Maternal Health Initiative (2022)</h5>
+                            <p>This initiative successfully focused on reducing maternal and neonatal mortality in rural areas.</p>
+                        </div>
+                    </div>
+
+                    <div class="story-card">
+                        <img src="malaria-project.jpg" alt="Malaria Project">
+                        <div class="story-content bg-pastel-green">
+                            <h5>End-Malaria Shield Project (2019-2021)</h5>
+                            <p>In line with SDG Target 3.3, this campaign aimed to eradicate localized outbreaks of malaria.</p>
+                        </div>
+                    </div>
+
+                    <div class="story-card">
+                        <img src="ncd-challenge.jpg" alt="NCD Challenge">
+                        <div class="story-content bg-pastel-green">
+                            <h5>The 30/30 NCD Awareness Challenge (2018)</h5>
+                            <p>This public awareness drive tackled the risk factors associated with Non-Communicable Diseases (NCDs).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container text-center">
+            <a href="#" class="scroll-up float-anim">▲</a>
+            <div class="social-links">
+                <a href="#"><img src="FB.png" alt="FB"></a>
+                <a href="#"><img src="IG.png" alt="IG"></a>
+                <a href="#"><img src="tk.png" alt="TK"></a>
+                <a href="#"><img src="x.png" alt="X"></a>
+            </div>
+            <p class="copyright">&copy;2025 Afiq Ammar</p>
+        </div>
+    </footer>
+
+    <script>
+        $(document).ready(function(){
+            // Re-using the floating animation from your requirements
+            function floatAnim() {
+                $('.float-anim').animate({marginTop: '-=5px'}, 1000)
+                               .animate({marginTop: '+=5px'}, 1000, floatAnim);
+            }
+            floatAnim();
+        });
+    </script>
+</body>
+</html>

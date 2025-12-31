@@ -1,0 +1,280 @@
+/* --- 1. UI STYLE GUIDE & VARIABLES --- */
+:root {
+    --dark-green: #002b1b;   
+    --light-green: #a8ffb2;  
+    --yellow: #ffcc00;      
+    --white: #ffffff;
+    --text-dark: #1a1a1a;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    --transition: all 0.3s ease-in-out;
+}
+
+/* --- 2. GLOBAL RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins';
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- 3. NAVIGATION --- */
+.main-header {
+    background-color: var(--dark-green);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img { height: 70px; }
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.main-nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    padding: 0 20px;
+}
+
+.main-nav ul li a.active, .main-nav ul li a:hover {
+    color: var(--yellow);
+}
+
+
+/* --- 4. HOMEPAGE HERO (SDG 3) --- */
+.hero-section {
+    background-color: var(--dark-green);
+    color: var(--white);
+    padding: 120px 0 160px; 
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 6rem;
+    font-weight: 800;
+    margin-bottom: 0;
+}
+
+.hero-section h2 {
+    font-size: 2.2rem;
+    margin-top: -10px;
+    font-weight: 600;
+}
+
+.hero-section p {
+    margin: 15px 0 30px;
+    font-size: 1.1rem;
+}
+
+/* --- 1. Global Centering Helper --- */
+.text-center {
+    text-align: center; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- 2. Hero Section Adjustments --- */
+.hero-section .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-section p {
+    max-width: 600px; 
+    margin: 0 auto 30px;
+}
+
+/* --- 3. Button Centering & Styling --- */
+.btn-yellow {
+    display: inline-block;
+    background-color: var(--yellow);
+    color: #000;
+    padding: 12px 35px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    margin: 20px auto;
+    transition: var(--transition);
+}
+
+/* --- 4. Section Paragraphs --- */
+.campaign-summary p, 
+.wellness-summary p, 
+.news-summary p {
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+}
+
+/* --- 5. ABOUT PREVIEW (OVERLAP CARD) --- */
+
+/* 1. For the News Grid Images */
+.news-card img {
+    width: 100%;
+    height: 100%;      
+    object-fit: cover;  
+    display: block;
+}
+
+/* 2. For the About Us Card */
+.preview-card .image-content img {
+    width: 100%;
+    height: 100%;  
+    object-fit: cover; 
+    display: block;
+}
+
+/* 3. For the Target/Impact Split Layout */
+.rounded-img {
+    width: 100%;
+    height: 400px;     
+    object-fit: cover; 
+    border-radius: 20px;
+}
+
+/* 4. For Partnership Logos (Fit without cropping) */
+.partner-card img {
+    max-width: 80%;  
+    max-height: 80%;
+    object-fit: contain;
+}
+
+.about-preview {
+    margin-top: -100px;
+    padding-bottom: 80px;
+}
+
+.preview-card {
+    background: var(--white);
+    border-radius: 30px;
+    display: flex;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    align-items: center;
+}
+
+.preview-card .image-content { flex: 1; }
+.preview-card .text-content { flex: 1; padding: 50px; }
+
+.preview-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* --- 6. SECTION HEADERS & BUTTONS --- */
+h2.section-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--dark-green);
+}
+
+.btn-yellow {
+    display: inline-block;
+    background-color: var(--yellow);
+    color: #000;
+    padding: 12px 35px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: var(--transition);
+}
+
+.btn-yellow:hover { transform: scale(1.05); }
+
+/* --- 7. ALTERNATING BG SECTIONS --- */
+.bg-light-green {
+    background-color: var(--light-green);
+    padding: 80px 0;
+}
+
+.wellness-summary, .news-summary {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.full-width-img {
+    width: 100%;
+    border-radius: 25px;
+    margin: 30px 0;
+}
+
+/* --- 8. GRID LAYOUTS (WELLNESS & NEWS) --- */
+.grid-3-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin: 40px 0;
+}
+
+.grid-item img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* --- 9. FOOTER --- */
+.main-footer {
+    padding: 60px 0 30px;
+    text-align: center;
+    position: relative;
+}
+
+.scroll-up {
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+    background: var(--yellow);
+    color: black;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.social-links img { height: 35px; margin: 0 15px; }
+.copyright { color: var(--dark-green); font-weight: 600; margin-top: 15px; }
+
+/* --- 10. RESPONSIVE --- */
+@media (max-width: 768px) {
+    .preview-card { flex-direction: column; }
+    .grid-3-col { grid-template-columns: 1fr; }
+    .hero-section h1 { font-size: 3.5rem; }
+    .about-preview { margin-top: 0; }
+    .scroll-up { left: 20px; }
+}

@@ -1,0 +1,355 @@
+/* --- 1. UI STYLE GUIDE & VARIABLES --- */
+:root {
+    --dark-green: #002b1b;   
+    --light-green: #a8ffb2;  
+    --pastel-green: #d1ffda;  
+    --yellow: #ffcc00;        
+    --white: #ffffff;
+    --text-dark: #1a1a1a;
+    --shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    --transition: all 0.3s ease-in-out;
+}
+
+/* --- 2. GLOBAL RESET & BASE STYLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Poppins;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--white);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.text-center { text-align: center; }
+.section-padding { padding: 80px 0; }
+.bg-light-green { background-color: var(--light-green); }
+
+/* --- 3. NAVIGATION (DARK GREEN) --- */
+.main-header {
+    background-color: var(--dark-green);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img { height: 70px; }
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.main-nav ul li a {
+    color: var(--white);
+    text-decoration: none;
+    padding: 0 20px;
+    transition: var(--transition);
+}
+
+.main-nav ul li a:hover, .main-nav ul li a.active {
+    color: var(--yellow);
+}
+
+/* --- 4. HERO SECTION --- */
+.hero-section {
+    background-color: var(--dark-green);
+    color: var(--white);
+    padding: 100px 0 160px 0; 
+    text-align: left;
+}
+
+.hero-section h1 {
+    font-size: 5rem;
+    font-weight: 800;
+    letter-spacing: -2px;
+}
+
+.title-large{
+    font-size: 3rem;
+    font-weight: 800;
+    text-align: right;
+}
+
+.section-title{ 
+    text-align: right;
+}
+
+.hero-section h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+/* Update this in your styles.css */
+.campaign-img {
+    flex: 1.2; 
+    height: 450px;
+    overflow: hidden;
+    border-radius: 20px 0 0 20px; 
+}
+
+.campaign-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.story-card img {
+    width: 100%;
+    height: 250px; 
+    object-fit: cover;
+    display: block;
+}
+
+/* Container for the White Overlap Cards */
+.white-card {
+    background: var(--white);
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    display: flex; 
+    align-items: stretch; 
+    overflow: hidden; 
+    max-width: 1000px; 
+    margin: 0 auto;
+}
+
+/* Image Side: Making it tidy */
+.card-image, .campaign-img {
+    flex: 1; 
+    min-height: 400px; 
+}
+
+.card-image img, .campaign-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+
+/* Text Side: Balancing the white space */
+.card-content, .campaign-text {
+    flex: 1; 
+    padding: 50px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Typography for Tidiness */
+.card-content h3, .campaign-text h3 {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    color: var(--dark-green);
+    line-height: 1.2;
+}
+
+.card-content p, .campaign-text p {
+    font-size: 1rem;
+    line-height: 1.6; 
+    color: #444;
+    margin-bottom: 25px;
+}
+
+/* --- 5. OVERLAPPING SPLIT CARDS (About & Campaign) --- */
+/* This handles the 50/50 split design from your pics */
+.overlap-section {
+    margin-top: -100px;
+    padding-bottom: 60px;
+}
+
+.white-card {
+    background: var(--white);
+    border-radius: 30px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    display: flex; 
+}
+
+.card-image, .card-content {
+    flex: 1;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.card-content h3 {
+    font-size: 2.5rem;
+    color: var(--dark-green);
+    margin-bottom: 15px;
+}
+
+/* --- 6. BUTTONS --- */
+.btn {
+    display: inline-block;
+    padding: 12px 35px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 15px;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+}
+
+.btn-yellow {
+    background-color: var(--yellow);
+    color: #000;
+}
+
+.btn-yellow:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 204, 0, 0.4);
+}
+
+/* --- 7. GRID SYSTEMS (Wellness & News) --- */
+/* Matches the 3-column layout in your news/wellness design */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.story-card, .news-item, .tip-card {
+    border-radius: 20px;
+    overflow: hidden;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.story-card:hover { transform: translateY(-5px); }
+
+.story-card img, .news-item img, .tip-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.story-content {
+    padding: 25px;
+    background-color: var(--pastel-green); 
+}
+
+.story-content h5 {
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+    color: var(--dark-green);
+}
+
+/* --- 8. CAMPAIGN PAGE SPECIALS --- */
+.campaign-banner {
+    width: 100%;
+    margin: 40px 0;
+}
+
+.campaign-banner img {
+    width: 100%;
+    border-radius: 25px;
+    box-shadow: var(--shadow);
+}
+
+/* --- 9. FOOTER --- */
+.main-footer {
+    padding: 60px 0 30px;
+    position: relative;
+}
+
+.social-links {
+    margin-bottom: 20px;
+}
+
+.social-links a img {
+    height: 28px;
+    margin: 0 12px;
+    transition: var(--transition);
+}
+
+.scroll-up {
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+    background: var(--yellow);
+    color: black;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.copyright { color: var(--dark-green); font-weight: 600; margin-top: 15px; }
+
+/* --- 9. MOBILE VIEW ADJUSTMENTS --- */
+@media (max-width: 768px) {
+    .menu-icon { display: block; } 
+    
+    .main-nav {
+        display: none; 
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: var(--dark-green);
+        padding: 20px;
+    }
+
+    .main-nav.active { display: block; } 
+
+    .main-nav ul { flex-direction: column; text-align: center; }
+    .main-nav ul li { padding: 10px 0; }
+
+    .hero-section h1 { font-size: 3rem; }
+    .title-large { font-size: 2.5rem; text-align: center; align-items: center; }
+    .section-title { text-align: center; align-items: center; }
+
+    .white-card {
+        flex-direction: column; 
+    }
+
+    .card-image, .campaign-img { min-height: 250px; }
+
+    .card-content, .campaign-text {
+        padding: 30px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .grid-3 {
+        grid-template-columns: 1fr; 
+    }
+}
