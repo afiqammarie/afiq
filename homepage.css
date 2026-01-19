@@ -58,8 +58,10 @@ body {
     padding: 0 20px;
 }
 
-.main-nav ul li a.active, .main-nav ul li a:hover {
-    color: var(--yellow);
+.main-nav ul li a.active {
+    color: var(--yellow) !important;
+    font-weight: bold;
+    border-bottom: 2px solid var(--yellow);
 }
 
 
